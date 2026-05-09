@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-do List App</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="theme-ocean">
+
+<div class="app">
+  <h1>To-Do List</h1>
+
+  <!-- Theme Dots -->
+  <div class="dots">
+    <button class="dot dot-mint"         title="Mint"     onclick="setTheme('mint',this)"></button>
+    <button class="dot dot-gold"         title="Gold"     onclick="setTheme('gold',this)"></button>
+    <button class="dot dot-ocean active" title="Ocean"    onclick="setTheme('ocean',this)"></button>
+    <button class="dot dot-lavender"     title="Lavender" onclick="setTheme('lavender',this)"></button>
+    <button class="dot dot-sunset"       title="Sunset"   onclick="setTheme('sunset',this)"></button>
+  </div>
+
+  <!-- Add Task -->
+  <div class="input-row">
+    <input class="task-input" id="taskInput" type="text" placeholder="Add a new task…" onkeydown="handleKey(event)"/>
+    <button class="add-btn" onclick="addTask()">+ Add</button>
+  </div>
+
+  <!-- Date / Time -->
+  <div class="meta-row">
+    <input class="meta-input" id="taskDate" type="date"/>
+    <input class="meta-input" id="taskTime" type="time"/>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <span id="totalCount">0 tasks</span>
+    <span id="doneCount">0 completed</span>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" onclick="setFilter('active',this)">Active</button>
+    <button class="filter-btn" onclick="setFilter('completed',this)">Completed</button>
+  </div>
+
+  <!-- Task List -->
+  <div class="task-list" id="taskList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
